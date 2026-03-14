@@ -1,0 +1,25 @@
+[project]
+name = "clawopc-cli"
+version = "0.1.0"
+description = "ClawOPC CLI — command-line tool for managing the AI team"
+requires-python = ">=3.12"
+dependencies = [
+    "clawopc-core",
+    "clawopc-console",
+    "typer>=0.15",
+    "rich>=13.0",
+]
+
+[project.scripts]
+clawopc = "clawopc_cli.main:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+clawopc-core = { workspace = true }
+clawopc-console = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clawopc_cli"]

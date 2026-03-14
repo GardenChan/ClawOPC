@@ -1,0 +1,23 @@
+[project]
+name = "clawopc-console"
+version = "0.1.0"
+description = "ClawOPC Console — Boss Agent's web interface (FastAPI backend + React frontend)"
+requires-python = ">=3.12"
+dependencies = [
+    "clawopc-core",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "watchfiles>=1.0",
+    "websockets>=14.0",
+    "pydantic-settings>=2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+clawopc-core = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clawopc_console"]
