@@ -46,5 +46,8 @@ packages/console/frontend/dist/
 .env.local
 .env.*.local
 
+# Spec (internal only)
+spec/
+
 # CodeBuddy
 .codebuddy/
